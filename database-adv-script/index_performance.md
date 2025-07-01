@@ -33,22 +33,3 @@ CREATE INDEX idx_properties_location ON properties(location);
 
 -- Index for properties.pricepernight to support price filtering
 CREATE INDEX idx_properties_price ON properties(pricepernight);
-```
-
----
-
-## 🧪 Measuring Performance with EXPLAIN ANALYZE
-
-You can use `EXPLAIN ANALYZE` to see how indexes affect query performance. For example:
-
-```sql
--- Before creating indexes
-EXPLAIN ANALYZE
-SELECT * FROM bookings WHERE user_id = 123;
-
--- After creating indexes
-EXPLAIN ANALYZE
-SELECT * FROM bookings WHERE user_id = 123;
-```
-
-Compare the output to observe improvements in cost and execution time.
